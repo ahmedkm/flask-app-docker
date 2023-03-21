@@ -1,11 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get install -y python3 python3-pip
 
-RUN add-apt-repository ppa:jonathonf/python-3.6
-RUN apt-get update && apt-get install -y python3.6 python3.6-pip
-
-RUN python3.6 -m pip install flask
+RUN python3 -m pip install flask
 
 COPY app.py /opt/
 
